@@ -1,10 +1,14 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-function FeelingsForm() {
+function FeelingsForm({ getFeedback }) {
     const dispatch = useDispatch();
     const history = useHistory();
+
+    useEffect(() => {
+        getFeedback();
+      }, []);
 
     const [feelingsInput, setFeelingsInput] = useState('');
 

@@ -23,11 +23,10 @@ router.get('/', (req, res) => {
 
 // POST route
 router.post('/', (req, res) => {
-    const newFeedbackItem = req.body
 
     const queryText = `
         INSERT INTO "feedback"
-            (feeling, understanding, support, comments)
+            (feelings, understanding, support, comments)
         VALUES
             ($1, $2, $3, $4)
     `;
@@ -41,11 +40,11 @@ router.post('/', (req, res) => {
 
     pool.query(queryText, queryParams)
         .then((result) => {
-            console.log('Added feedback to the DB', newFeedbackItem);
+            console.log('Added feedback to the DB', req.body);
             res.sendStatus(201);
         })
         .catch((error) => {
-            console.log('POST /feedback error', error);
+            console.log('POST error', error);
             res.sendStatus(500);
         })
 })
