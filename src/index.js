@@ -13,37 +13,41 @@ import logger from 'redux-logger';
 const feelingsReducer = (state = '', action) => {
     switch(action.type) {
         case 'SET_FEELINGS_INFO':
-            return [action.payload];
+            return action.payload
+        default:
     }
     return state;
-} 
+}; 
 
 
 const understandingReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_UNDERSTANDING_INFO':
-            return [action.payload];
+            return action.payload
+        default:
     }
     return state
-}
+};
 
 
 const supportReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_SUPPORT_INFO':
-            return [action.payload];
+            return action.payload
+        default:
     }
     return state;
-}
+};
 
 
 const commentsReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_COMMENTS_INFO':
-            return [action.payload];
+            return action.payload
+        default:
     }
     return state;
-}
+};
 
 
 const storeInstance = createStore(
@@ -54,7 +58,7 @@ const storeInstance = createStore(
         commentsReducer
     }),
     applyMiddleware(logger)
-)
+);
 
 
 ReactDOM.render(

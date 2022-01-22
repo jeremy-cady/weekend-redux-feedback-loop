@@ -3,9 +3,36 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 function SupportForm() {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const [supportInput, setSupportInput] = useState('');
+
+    const onSubmit = () => {
+        dispatch({
+            type: 'SET_SUPPORT_INFO',
+            payload: supportInput
+        })
+        if(!supportInput) {
+            alert('Please enter a support value 💪');
+        }
+        else {
+            history.push('/comments');
+        }
+    }
+
+
 
     return(
-        <></>
+        <>
+            <h1>How well do you feel you feel supported?</h1>
+            <input 
+                type="number"
+                onChange={(event) => setSupportInput(event.target.value)}
+                value={supportInput}
+            />
+            <button onClick={onSubmit}>NEXT</button>
+        </>
     )
 }
 

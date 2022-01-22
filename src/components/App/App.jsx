@@ -26,19 +26,20 @@ function App() {
       url: '/feedback'
     }).then((response) => {
       dispatch({
-        type: 'GET_FEEDBACK_LIST',
+        type: 'SET_FEEDBACK_LIST',
         payload: response.data
-      })
+        })
       }).catch((error) => {
         console.error('GET /feedback error', error);
-    });
+    })
   }
 
-  const addFeedbackItem = (newFeedbackItem) => {
+  const addFeedbackItem = () => {
     axios.post({
       method: 'POST',
       url: '/feedback'
     }).then((response) => {
+      console.log('response is:', response);
       getFeedback();
     }).catch((error) => {
       console.error('POST /feedback error', error);
@@ -51,9 +52,31 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <Router>
-        <FeelingsForm />
-      </Router>
+          <Router>
+            <div className='navigation'>
+              <Route path='/feelings' exact>
+                <FeelingsForm />
+              </Route>
+              <Route path='/understanding' exact>
+                <UnderstandingForm />
+              </Route>
+              <Route path='/support' exact>
+                <SupportForm />
+              </Route>
+              <Route path='/comments' exact>
+                <CommentsForm />
+              </Route>
+              <Route path='/review' exact>
+                <ReviewFeedback 
+                  addFeedbackItem={addFeedbackItem}
+                  getFeedback={getFeedback}
+                />
+              </Route>
+              <Route path='/success'>
+                <SuccessPage />
+              </Route>
+            </div>
+          </Router>
     </div>
   );
 }
