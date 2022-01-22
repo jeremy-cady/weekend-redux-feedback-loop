@@ -20,6 +20,15 @@ function CommentsForm() {
 
     return(
         <>
+            <div>
+                <script type="text/javascript">
+                    function preventBack() {
+                    window.history.forward() 
+                    }
+                    setTimeout("preventBack()", 0);
+                    window.onunload = function () { null };
+                </script>
+            </div>
             <h1>Any comments you would like to leave?</h1>
             <input
                 className="commentsInput"

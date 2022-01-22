@@ -13,8 +13,7 @@ import logger from 'redux-logger';
 const feelingsReducer = (state = '', action) => {
     switch(action.type) {
         case 'SET_FEELINGS_INFO':
-            return action.payload
-        default:
+            return [action.payload]
     }
     return state;
 }; 
@@ -23,8 +22,7 @@ const feelingsReducer = (state = '', action) => {
 const understandingReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_UNDERSTANDING_INFO':
-            return action.payload
-        default:
+            return [action.payload]
     }
     return state
 };
@@ -33,8 +31,7 @@ const understandingReducer = (state = '', action) => {
 const supportReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_SUPPORT_INFO':
-            return action.payload
-        default:
+            return [action.payload]
     }
     return state;
 };
@@ -43,8 +40,7 @@ const supportReducer = (state = '', action) => {
 const commentsReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_COMMENTS_INFO':
-            return action.payload
-        default:
+            return [action.payload]
     }
     return state;
 };

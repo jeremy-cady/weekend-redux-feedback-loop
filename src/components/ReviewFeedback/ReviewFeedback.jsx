@@ -9,16 +9,15 @@ function ReviewFeedback({ addFeedbackItem }) {
     const support = useSelector(store => store.supportReducer);
     const comments = useSelector(store => store.commentsReducer);
 
-    const newFeedbackItem = {
+    const newItem = {
         feelings: feelings,
         understanding: understanding,
         support: support,
         comments: comments
     }
 
-    const onSubmit = (newFeedbackItem) => {
-        console.log('item is:', newFeedbackItem);
-        addFeedbackItem(newFeedbackItem);
+    const onSubmit = () => {
+        addFeedbackItem(newItem);
         history.push('/success');
     }
 
@@ -26,13 +25,6 @@ function ReviewFeedback({ addFeedbackItem }) {
 
     return(
         <>
-            <head>
-                <script type="text/javascript">
-                    function disableBack() { window.history.forward() }
-                    setTimeout("disableBack()", 0);
-                    window.onunload = function () { null };
-                </script>
-            </head>
             <div>
                 <ul>
                     <li>Feelings: {feelings}</li>

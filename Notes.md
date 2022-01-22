@@ -1,6 +1,6 @@
 TODO:
 
-[ ] Setup
+[x] Setup
     [x] Create DB and tables using `data.sql`
     [x] Start the server
     [x] npm install
@@ -20,17 +20,17 @@ TODO:
         [x] each step should only allow the user to advance if there was an input provided
         [x] tell the user in some way that an input must be provided
         [x] Comments section does not need to be validated (empty value is ok)
-    [ ] Review component
-        [ ] Allows user to review their feedback
-        [ ] does not allow user to change their input
-        [ ] does not allow the user to go back
+    [x] Review component
+        [x] Allows user to review their feedback
+        [x] does not allow user to change their input
+        [x] does not allow the user to go back
     [ ] Submit the feedback
         [x] `Review` step needs a submit button
             [ ] saves the submission in the DB
-        [ ] user should see a submission success page
-        [ ] success page should have a button to start a new survey
-            [ ] should reset all data 
-            [ ] should take user back to page one
+        [x] user should see a submission success page
+        [x] success page should have a button to start a new survey
+            [x] should reset all data 
+            [x] should take user back to page one
 
 [ ] Stretch Goals (complete in order)
     [ ] allow user to go back and change scores

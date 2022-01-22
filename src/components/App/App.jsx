@@ -34,7 +34,7 @@ function App() {
     })
   }
 
-  const addFeedbackItem = () => {
+  const addFeedbackItem = (item) => {
     axios.post({
       method: 'POST',
       url: '/feedback'
@@ -55,7 +55,7 @@ function App() {
           <Router>
             <div className='navigation'>
               <Route path='/feelings' exact>
-                <FeelingsForm />
+                <FeelingsForm getFeedback={getFeedback}/>
               </Route>
               <Route path='/understanding' exact>
                 <UnderstandingForm />
@@ -72,7 +72,7 @@ function App() {
                   getFeedback={getFeedback}
                 />
               </Route>
-              <Route path='/success'>
+              <Route path='/success' exact>
                 <SuccessPage />
               </Route>
             </div>
