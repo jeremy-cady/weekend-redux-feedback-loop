@@ -11,10 +11,10 @@ function FeelingsForm() {
     const onSubmit = () => {
         dispatch({
             type: 'SET_FEELINGS_INFO',
-            payload: feelingInput
+            payload: feelingsInput
         })
 
-        if(!feelingInput) {
+        if(!feelingsInput) {
             alert('Please enter a feelings value 😊');
         }
         else {
@@ -24,14 +24,11 @@ function FeelingsForm() {
     return(
         <>
             <h1>How are you feeling today?</h1>
-            <label for="feelings">Feelings?</label>
-            <select name="feelings">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>    
-            </select>
+            <input 
+                type="number"
+                onChange={(event) => setFeelingsInput(event.target.value)}
+                value={feelingsInput}
+            />
             <button onClick={onSubmit}>NEXT</button>
         </>
     )
