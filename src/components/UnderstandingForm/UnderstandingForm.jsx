@@ -26,6 +26,9 @@ function UnderstandingForm() {
             <h1>How well do you feel you are understanding the material?</h1>
             <input 
                 type="number"
+                min="0"
+                max="10"
+                step="1"
                 onChange={(event) => setUnderstandingInput(event.target.value)}
                 value={understandingInput}
             />

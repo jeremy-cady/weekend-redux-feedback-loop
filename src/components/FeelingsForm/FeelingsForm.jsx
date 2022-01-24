@@ -26,6 +26,9 @@ function FeelingsForm() {
             <h1>How are you feeling today?</h1>
             <input 
                 type="number"
+                min="0"
+                max="10"
+                step="1"
                 onChange={(event) => setFeelingsInput(event.target.value)}
                 value={feelingsInput}
             />

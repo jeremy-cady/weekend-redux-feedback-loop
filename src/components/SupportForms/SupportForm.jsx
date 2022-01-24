@@ -28,6 +28,9 @@ function SupportForm() {
             <h1>How well do you feel you feel supported?</h1>
             <input 
                 type="number"
+                min="0"
+                max="10"
+                step="1"
                 onChange={(event) => setSupportInput(event.target.value)}
                 value={supportInput}
             />
