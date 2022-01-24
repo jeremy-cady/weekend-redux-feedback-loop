@@ -19,7 +19,7 @@ function ReviewFeedback() {
 
 
     const addFeedbackItem = () => {
-        axios.post({
+        axios({
           method: 'POST',
           url: '/feedback',
           data: {
@@ -30,7 +30,7 @@ function ReviewFeedback() {
           }
         }).then((response) => {
           console.log('response is:', response);
-          //history.push('/feelings')
+          history.push('/feelings')
         }).catch((error) => {
           console.error('POST /feedback error', error);
         });
