@@ -1,14 +1,10 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-function FeelingsForm({ getFeedback }) {
+function FeelingsForm() {
     const dispatch = useDispatch();
     const history = useHistory();
-
-    useEffect(() => {
-        getFeedback();
-      }, []);
 
     const [feelingsInput, setFeelingsInput] = useState('');
 
@@ -30,6 +26,9 @@ function FeelingsForm({ getFeedback }) {
             <h1>How are you feeling today?</h1>
             <input 
                 type="number"
+                min="0"
+                max="10"
+                step="1"
                 onChange={(event) => setFeelingsInput(event.target.value)}
                 value={feelingsInput}
             />

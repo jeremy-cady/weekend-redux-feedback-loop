@@ -10,37 +10,37 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 
-const feelingsReducer = (state = '', action) => {
+const feelingsReducer = (state = 0, action) => {
     switch(action.type) {
         case 'SET_FEELINGS_INFO':
-            return [action.payload]
+            return action.payload
     }
     return state;
 }; 
 
 
-const understandingReducer = (state = '', action) => {
+const understandingReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_UNDERSTANDING_INFO':
-            return [action.payload]
+            return action.payload
     }
     return state
 };
 
 
-const supportReducer = (state = '', action) => {
+const supportReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_SUPPORT_INFO':
-            return [action.payload]
+            return action.payload
     }
     return state;
 };
 
 
-const commentsReducer = (state = '', action) => {
+const commentsReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_COMMENTS_INFO':
-            return [action.payload]
+            return action.payload
     }
     return state;
 };

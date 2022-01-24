@@ -24,9 +24,9 @@ TODO:
         [x] Allows user to review their feedback
         [x] does not allow user to change their input
         [x] does not allow the user to go back
-    [ ] Submit the feedback
+    [x] Submit the feedback
         [x] `Review` step needs a submit button
-            [ ] saves the submission in the DB
+            [x] saves the submission in the DB
         [x] user should see a submission success page
         [x] success page should have a button to start a new survey
             [x] should reset all data 
